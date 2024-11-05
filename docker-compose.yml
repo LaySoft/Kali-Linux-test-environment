@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  kali:
+    container_name: kali-linux
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    command: tail -f /dev/null
+    volumes:
+      - ./app:/app:z
+    networks:
+      - halozat
+networks:
+  halozat:
